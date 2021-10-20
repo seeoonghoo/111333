@@ -1,0 +1,26 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/user/sign.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+<script src='/static/javascript/user/first_page.js'></script>
+
+                <div class = 'big_box'>
+                    <div class="middle_box">
+                        <div class="title_box">
+                            <img src = '/static/images/real_title.png' style="width: 100%; height: 100%;">
+                        </div>
+                        <div class="success_box_first">
+                            약장수에 오신 것을 환영합니다!
+                        </div>
+                    </div>
+                    <input type="submit" value="건강기능식품 검색하기" class="input_pretty_first" id = 'camera' >
+                    <input type="submit" value="로그인" class="input_pretty_first" id = 'login'>
+                    <input type="submit" value="회원가입" class="input_pretty_first" id = 'sign'>           
+                </div>
+		
+{% endblock %}

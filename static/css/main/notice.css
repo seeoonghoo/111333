@@ -1,0 +1,168 @@
+a {text-decoration: none;color: black;}
+    
+    @media ( min-width: 200px ) {
+        /* 틀을 잡아주는 가장 큰 박스 */
+        .big_box{
+            float:inherit;
+            width : 100%;
+            height: 100%;
+            margin : 70px auto;
+        }
+        /* 중간에 있는 하얀색 박스 */
+        .middle_box{
+            width : 100%;
+            background-color: white;
+            margin: 5% auto;
+            display: inline-block;
+        }
+        
+        /* 공지사항/FAQ/1대1질문 타이틀 (날짜, 제목) 큰 틀 */
+        .hot_recent_list{
+            background-color: white;
+            width: 94%;
+            padding: 5% 3%;
+            margin: 0;
+            display: inline-block;
+            border-bottom: 2px solid #e3e3e3;
+        }
+
+        /* 공지사항/FAQ/1대1질문 타이틀 (날짜, 제목) 텍스트 */
+        .hot_recent_list_text{
+            width: 90%;
+            float: left;
+            margin: 0 2%;
+            font-size: 110%;
+        }
+
+        /* 공지사항/FAQ/1대1질문 답변/내용 큰 틀 */
+        .hide_and_seek{
+            background-color: #e3e3e3;
+            width: 94%;
+            margin: auto;
+            display: inline-block;
+            padding: 5% 3%;
+            border-bottom: 2px solid #e3e3e3;
+        }
+
+        /* 공지사항/FAQ/1대1질문 답변/내용 텍스트 */
+        .hide_and_seek_text{
+            width: 90%;
+            float: left;
+            margin: 0 2%;
+            font-size: 110%;
+        }
+
+        /* 날짜 기입 */
+        #for_date{
+            font-size: 80%;
+            color : gray;
+            
+        }
+
+        /* FAQ 카테고리 설정 */
+        .option_search_box{
+            width: 100%;
+            background-color: white;
+            margin : -1% auto;
+            margin-bottom: 3%;
+        }
+    
+        /* FAQ 카테고리 설정 틀 */
+        .option_search_box_big{
+            width: 100%;
+            display: inline-block;
+        }
+    
+        /* FAQ 카테고리 리스트 틀 */
+        .option_search_box_big_list{
+            width: 100%;
+        }
+
+        /* FAQ 카테고리 항목 */
+        .select_brand_option_list{
+            text-align: center;
+            padding: 2% 2%;
+            margin: 0.5%;
+            font-size: 80%;
+            display: inline-block;
+            border-radius: 15%;
+        }
+
+        /* FAQ 카테고리 현재 선택 항목 */
+        .select_brand_option_list.current{
+            color : #24994c;
+        }
+
+
+        /* 1대1 질문 작성 카테고리 박스 */
+        .category_title_box{
+            width: 95%;
+            margin: 3% 2.5%;
+            display: inline-block;
+        }
+
+        /* 1대1 질문 작성 카테고리 리스트 */
+        .category_select{
+            width: 25%;
+            font-size: 100%;
+            padding : 3% 1%;
+            outline-style: none;
+            margin-left: 0.5%;
+            margin-top: 0.5%;
+        }
+
+        /* 1대1 질문 제목 작성 */
+        input[type=text] {
+            border : 2px solid #dee1e5;
+            width : 63%;
+            font-size : 90%;
+            padding : 3% 5%;
+            float: right;
+            margin-top: 0.5%;
+        }
+
+        /* 1대1 질문 제목 입력시 */
+        input[type=text]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+
+        /* 1대1 질문 내용 입력 큰 틀 */
+        .text_area_box{
+            width: 95%;
+            margin: auto;
+        }
+
+        /* 1대1 질문 내용 입력 TEXTAREA */
+        .question_text{
+            width: 89%;
+            min-height: 300px;
+            padding: 5%;
+            font-size: 100%;
+            margin-left: 0.5%;
+        }
+
+        /* 1대1 질문 등록 버튼 */
+        .input_pretty{
+            -webkit-appearance:none;
+            width: 100%;
+            font-size: 120%;
+            padding: 5% 10%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+        }
+
+        /* 1대1 질문 목록 화면에서 1대1 질문 작성하기 버튼 */
+        .question_write{
+            -webkit-appearance:none;
+            width: 30%;
+            font-size: 110%;
+            padding: 2% 5%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+            margin-bottom: 3%;
+        }
+
+    }

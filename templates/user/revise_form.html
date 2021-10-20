@@ -1,0 +1,51 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/user/sign.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+                <div class = 'big_box'>
+                    <form method="post" action="/revise_func">
+                        {% csrf_token %}
+                        <div class = 'list_box' style="margin-top: 40px;">
+                            <div class = 'text_box' >
+                                <label for="name" >이메일</label>
+                            </div>
+                            <div class = 'revise_info_box'>
+                                <label for="name" style="font-size: 50%;">{{data.email}}</label>
+                            </div>
+                        </div>
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name">이름</label>
+                            </div>
+                            <div class = 'revise_info_box'>
+                                <label for="name" style="font-size: 70%;">{{data.user_name}}</label>
+                            </div>
+                        </div>
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >비밀번호</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="password" id="password" name="password"value="{{data.passwd}}">
+                            </div>
+                        </div>
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >휴대폰</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="text" id="phone" name="phone" value="{{data.phone}}">
+                            </div>
+                        </div>
+                        <input type="submit" value="정보 수정" class="input_pretty" >                
+                    </form>
+                </div>
+                
+                
+				
+{% endblock %}

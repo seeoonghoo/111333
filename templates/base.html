@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<link href="/static/css/main/index.css" rel="stylesheet" type="text/css">
+{% block css_link %}{% endblock %}
+<style>
+
+	/* 폰트 설정 */
+	@font-face {
+		font-family: 'testtest';
+		src: url(../static/font/NanumSquare_acR.ttf) format('truetype');
+	}
+	*{
+		font-family: 'testtest';
+	}
+	
+</style>
+
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='/static/javascript/base.js'></script>
+
+</head>
+
+<body style="background-color: #f4f6f8; padding: 0; margin: 0;" oncontextmenu='return false' onselectstart='return false' ondragstart='return false' - 드래그방지>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+
+	<div id="container">
+		<div id="header">
+		</div>
+		<div id="wrapper">
+			<div id="content" style=" font-family: 'testtest'; ">
+				{% block contents %}
+				{% endblock %}
+			</div>
+		</div>
+
+		<div class = "navi">
+				<ul class="tabs1">
+					<li class="tab-link1" data-tab1="tab-1" id = 'one_base'><image id = 'one_img' src = "/static/images/exhibitions.png"></image><br><br>기획전</li>
+					<li class="tab-link1" data-tab1="tab-2" id = 'two_base'><image id = 'two_img' src = "/static/images/search.png" ></image><br><br>검색</li>
+					<li class="tab-link1" data-tab1="tab-4" id = 'four_base'><image id = 'four_img' src = "/static/images/medicine.png" ></image><br><br>섭취정보</li>
+					<li class="tab-link1" data-tab1="tab-5" id = 'five_base'><image id = 'five_img' src = "/static/images/more.png" ></image><br><br>더보기</li>
+				</ul>
+		</div>
+	</div>
+
+	<div id="load">
+		<img src="/static/images/animation.gif" style="width: 20%; height: 10%; margin-top: 90%; margin-left: -10%;"  alt="loading" > 
+	</div>
+</body>
+</html>

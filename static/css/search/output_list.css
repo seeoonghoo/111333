@@ -1,0 +1,239 @@
+a {text-decoration: none;color: black;}
+    /* label { text-size-adjust: 10px;} */
+    
+    @media ( min-width: 200px ) {
+
+        /* 틀을 잡아주는 가장 큰 박스 */
+        .big_box{
+            float:inherit;
+            width : 100%;
+            height: 100%;
+            margin : 70px auto;
+        }
+
+        /* 중간에 있는 하얀색 박스 */
+        .middle_box{
+            width : 100%;
+            background-color: white;
+            margin: 5% auto;
+            margin-top: -3%;
+            display: inline-block;
+        }
+        
+        /* 텍스트 검색 박스  */
+        .input_box {
+            margin-top: -20%;
+            width : 100%;
+            background-color: white;
+            position: fixed;
+            z-index: 95;
+        }
+
+        /* 텍스트 검색 입력창 */
+        input[type=text] {
+            border : 0px solid red;
+            width : 65%;
+            font-size : 110%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+
+        /* 텍스트 검색 입력시 */
+        input[type=text]:focus {
+            outline-style: none;
+        }
+
+        /* 큰 틀 */
+        .title_box{
+            width: 100%;  
+        }
+
+        /* 갯수 있는 박스 */
+        .cnt_box{
+            width : 91.5%;
+            padding: 3% 4%;
+            font-weight: bold;
+            border-bottom: 2px solid #e9e9e9;
+        }
+
+        /* 검색 결과 하나씩 나오는 박스 */
+        .small_box{
+            width: 100%;
+            border-bottom: 2px solid #e9e9e9;
+            display: inline-block;
+            padding: 2% 0;
+            margin: 0;
+        }
+
+        /* 검색 결과 박스 이미지 박스 */
+        .image_box{
+            float: left;
+            width : 25%;
+            margin-left : 2%;
+            max-height: 95px;
+        }
+
+        /* 검색 결과 박스 이미지 */
+        .image_box img{
+            width: 100%;
+            max-height: 95px;
+        }
+        
+        /* 검색 결과 텍스트 */
+        .text_box{
+            float: right;
+            width : 65%;
+            margin-right: 5%;
+            font-size: 100%;
+            max-height: 85px;
+            padding : 5px 0;
+        }
+
+
+        /* 검색어 추천 박스 */
+        .middle_box_hot_product{
+            width : 100%;
+            background-color: #f4f5f9;
+            margin: -2% auto;
+            display: inline-block;
+        }
+
+        /* 추천 검색어 */
+        .hot_product{
+            background-color: white;
+            text-align: center;
+            padding: 3% 2%;
+            border-radius: 15%;
+            font-size: 80%;
+            display:inline-block;
+        }
+
+        /* 텍스트 검색 검색 이미지 */
+        .search_image{
+            width: 6%;
+            height: 6%;
+            float: right;
+            margin: 5% 3%;
+        }
+    
+        /* 상세검색 나오게 하는 이미지 */
+        .detail_image{
+            width: 6%;
+            height: 6%;
+            float: left;
+            margin: 5% 3%;
+        }
+
+        /* 상세검색 큰 틀 */
+        .option_search_box{
+            width: 100%;
+            background-color: white;
+            margin-bottom: 3%;
+        }
+
+        /* 상세검색 박스 */
+        .option_search_box_big{
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* 상세검색 브랜드/키워드/성분 제목 */
+        .option_search_box_big_title{
+            width: 20%;
+            float: left;
+            font-size: 100%;
+            text-align: center;
+            margin : 1% 0;
+        }
+
+        /* 상세검색 브랜드/키워드/성분 리스트 큰 틀 */
+        .option_search_box_big_list{
+            width: 77%;
+            float: right;
+            display: none;
+        }
+
+        /* 성분 리스트 */
+        .select_extract_option_list{
+            text-align: center;
+            padding: 2% 2%;
+            margin: 0.5%;
+            font-size: 80%;
+            display: inline-block;
+            border-radius: 15%;
+        }
+
+        /* 키워드 리스트 */
+        .select_effects_option_list{
+            text-align: center;
+            padding: 2% 2%;
+            margin: 0.5%;
+            font-size: 80%;
+            display: inline-block;
+            border-radius: 15%;
+        }
+
+        /* 브랜드 리스트 */
+        .select_brand_option_list{
+            text-align: center;
+            padding: 2% 2%;
+            margin: 0.5%;
+            font-size: 80%;
+            display: inline-block;
+            border-radius: 15%;
+        }
+
+        /* 각 리스트에서 현재 클릭된 것들 */
+        .select_brand_option_list.current{
+            color : #24994c;
+        }
+        .select_effects_option_list.current{
+            color : #24994c;
+        }
+        .select_extract_option_list.current{
+            color : #24994c;
+        }
+
+        /* 성분 함량 큰 틀 */
+        .option_range_box{
+            width: 73%;
+            float: right;
+            margin-top: 2%;
+            padding: 0 2%;
+        }
+
+        /* 성분명 */
+        .option_range_box_title{
+            width: 70%;
+            float: left;
+            font-size: 80%;
+        }
+
+        /* 성분 입력 */
+        input[type=number] {
+            border : 1px solid #e9e9e9;
+            width : 25%;
+            font-size : 80%;
+            padding : 3% 5%;
+            margin: 2% 0;
+        }
+
+        /* 성분 입력시 */
+        input[type=number]:focus {
+            outline-style: none;
+        }
+
+        /* 성분 단위 */
+        .unit_select{
+            width: 14%;
+            font-size: 80%;
+            margin: 2% 0;
+            padding: 3% 2%;
+            float: right;
+            text-align: center;
+        }
+        
+
+
+
+    }

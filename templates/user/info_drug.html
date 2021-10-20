@@ -1,0 +1,239 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/user/info.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main/header_except_home.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='/static/javascript/user/info_drug.js'></script>
+
+
+{% csrf_token %}
+
+
+                <div class="header">
+                    <!-- 여기선 사이트맵 드롭다운 -->
+                    <div class="header_menu_html">
+                        <div class="header" style="border-bottom: 1px solid lightgrey;">
+                            <div class = "header_image_box">
+                                <a href="/"><img src="/static/images/real_title.png" style="width: 100%; height: 100%;" ></a>
+                            </div>
+                            <div class = "header_menu_box_back">
+                                X
+                            </div>
+                        </div>
+                        <div class = "margin_box"  >
+                            <div class = "site_map">
+                                <ul class="tabs_map">
+                                    <li class="tab-link_map current" data-tab_map="tab-1map">홈</li>
+                                    <li class="tab-link_map" data-tab_map="tab-2map">검색</li>
+                                    <li class="tab-link_map" data-tab_map="tab-3map">성분확인</li>
+                                    <li class="tab-link_map" data-tab_map="tab-4map">고객센터</li>
+                                </ul>
+                                <div id="tab-1map" class="tab-content_map current">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">공지사항</li>
+                                        <li><a href = '/notice'>공지사항</a></li>
+                                        <li>회사소개</li>
+                                    </ul>
+                                    <br>
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">서비스</li>
+                                        <li><a href = '/exhibitions'>기획전</a></li>
+                                        <li><a href = '/exhibitions'>맞춤형 추천</a></li>
+                                    </ul>
+                                </div>
+                
+                                <div id="tab-2map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">검색</li>
+                                        <li><a href = '/camera'>이미지 검색</a></li>
+                                        <li><a href = '/camera'>텍스트 검색</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-3map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">성분 확인</li>
+                                        <li><a href = '/'>섭취중인 건강기능식품</a></li>
+                                        <li><a href = '/'>권장량대비 섭취비율</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-4map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">마이페이지</li>
+                                        <li><a href = '/info_form'>마이페이지</a></li>
+                                        <li><a href = '/faq'>자주 묻는 질문</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 여기까지 -->
+                    <div class = "header_back_box">
+                        <img src = '/static/images/back.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_menu_box">
+                        <img src = '/static/images/menu.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_text_box">
+                        <a href = "/login_form/"><br>섭취정보</a>
+                    </div>
+                </div>
+                <div class = 'big_box'>
+
+                    <div class = 'middle_box'>
+                        <div class = "title_box" >
+                            섭취중인 건강기능식품
+                        </div>
+                        <hr color="#f4f6f8" size="1px">
+
+                        <!-- main_db에 있는 약 -->
+                        {% for t in yak_info %}
+                        <div class = "small_box_user">
+                            <div class = 'image_box' onclick="page_change('{{t.name}}')">
+                                <img src='{{t.image}}' width="100%" height="100%">
+                            </div>
+                            <div class = 'x_box' ><a href='/del_drug?no={{t.main_no}}'>삭제</a></div>
+                            <div class = 'text_box' >
+                                <sapn style="font-size: 80%;">섭취 시작 날짜 : {{t.start_date}}</sapn><br>
+                                {% if t.minus == 'minus' %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : 0</sapn><br>
+                                {% elif t.minus == 'exceed' %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : {{t.number}}</sapn><br>
+                                {% else %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : {{t.left_cnt}}</sapn><br>
+                                {% endif %}
+                                <span id = 'namename' style="font-size: 95%;">{{t.name}}</span>                           
+                            </div>
+                            <div class = 'select_box'>
+                                <select class = 'select_css' name="state" id="state" onchange="intake_change('{{t.main_no}}','main')" >
+                                    {% if t.state == '섭취중' %}
+                                    <option value="섭취중" selected>섭취중</option>
+                                    <option value="섭취완료">섭취완료</option>
+                                    <option value="섭취예정">섭취예정</option>
+                                    {% elif t.state == '섭취완료' %}
+                                    <option value="섭취중">섭취중</option>
+                                    <option value="섭취완료" selected>섭취완료</option>
+                                    <option value="섭취예정">섭취예정</option>
+                                    {% else %}
+                                    <option value="섭취중" >섭취중</option>
+                                    <option value="섭취완료">섭취완료</option>
+                                    <option value="섭취예정" selected>섭취예정</option>
+                                    {% endif %}
+                                </select>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+
+                        <!-- 사용자가 만든 약 -->
+                        {% for t in custom_yak_info %}
+                        <div class = "small_box_user">
+                            <div class = 'image_box'>
+                                <img src='{{t.custom_image}}' width="100%" height="100%">
+                            </div>
+                            <div class = 'x_box' ><a href='/del_drug_custom?no={{t.custom_no}}'>삭제</a></div>
+                            <div class = 'text_box' >
+                                <sapn style="font-size: 80%;">섭취 시작 날짜 : {{t.custom_start_date}}</sapn><br>
+                                {% if t.minus == 'minus' %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : 0</sapn><br>
+                                {% elif t.minus == 'exceed' %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : {{t.custom_number}}</sapn><br>
+                                {% else %}
+                                <sapn style="font-size: 80%;"> 남은 알약 수 : {{t.left_cnt}}</sapn><br>
+                                {% endif %}
+                                <span id = 'namename' style="font-size: 95%;">{{t.custom_name}}</span>                           
+                            </div>
+                            <div class = 'select_box'>
+                                <select class = 'select_css' name="state" id="state" onchange="intake_change('{{t.custom_no}}','custom')" >
+                                    {% if t.custom_state == '섭취중' %}
+                                    <option value="섭취중" selected>섭취중</option>
+                                    <option value="섭취완료">섭취완료</option>
+                                    <option value="섭취예정">섭취예정</option>
+                                    {% elif t.custom_state == '섭취완료' %}
+                                    <option value="섭취중">섭취중</option>
+                                    <option value="섭취완료" selected>섭취완료</option>
+                                    <option value="섭취예정">섭취예정</option>
+                                    {% else %}
+                                    <option value="섭취중" >섭취중</option>
+                                    <option value="섭취완료">섭취완료</option>
+                                    <option value="섭취예정" selected>섭취예정</option>
+                                    {% endif %}
+                                </select>
+                            </div>
+
+                        </div>
+                        {% endfor %}
+   
+                    </div>
+                </div>
+
+                <div class = 'big_box' style="margin-top: -70px;">
+                    <div class="middle_box" id = 'per_day'>
+                        <div class = "title_box">
+                            1일 권장량 대비 섭취량
+                            {% if for_sex.sex == '여성' %}
+                            <label><input type="checkbox" id = "good_woman" value="임산부" ><span style="font-size: 80%;">임산부</span></label>
+                            <label><input type="checkbox" id = "nice_woman" value="수유부" ><span style="font-size: 80%;">수유부</span></label>
+                            {% endif %}
+                            
+                        </div>
+                        <hr color="#f4f6f8" size="1px">
+
+                        {% for ext in extract_re %}
+                        <div class = "total_box">
+                            <div class = "total_name_box">
+                                {{ext.extract_name}} 
+                            </div>
+
+                            <div class='total_color_box'>
+                                {% if ext.color == 'yellow' %}
+                                <span style="color: #f2ab06; ">부족</span>
+                                {% elif ext.color == 'blue' %}
+                                <span style="color: blue;">보통</span>
+                                {% elif ext.color == 'green' %}
+                                <span style="color: green">충족</span>
+                                {% else %}
+                                <span style="color : red">과다</span>
+                                {% endif %}   
+                            </div>
+
+                            <div class="total_per_box">
+                                {{ext.b}} / {{ext.dosage_limit}}{{ext.regular_unit}} 
+                                <br>
+                                <span >({{ext.percent}}%)</span>
+                            </div>
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="middle_box" id = 'except'>
+                        <div class = "title_box">
+                            1일 권장량에 포함되지 않는 성분   
+                        </div>
+                        <hr color="#f4f6f8" size="1px">
+
+                        {% for except in extract_except_recommend %}
+                        <div class = "total_box_except">
+                            <div class = "total_name_box">
+                                {{except.extract_name}} 
+                            </div>
+
+                            <div class='total_color_box'>
+                            </div>
+
+                            <div class="total_per_box">
+                                {{except.b}}{{except.regular_unit}}
+                            </div>
+                            
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div style="margin-bottom : 100px;"></div>
+
+{% endblock %}

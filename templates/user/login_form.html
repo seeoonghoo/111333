@@ -1,0 +1,66 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/user/login.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+<script src='/static/javascript/user/login_form.js'></script>
+
+                <form id="login-form" name="loginform" onsubmit='return concate()' method="post" action="/login_func">
+                    {% csrf_token %}
+                    <div class = 'big_box'>
+                        <div class="middle_box">
+                            <a href = '/'><img src = '/static/images/real_title.png' style="width: 70%; height: 70%; margin-left: 15%;"></a>
+                            <div class = 'googlekakao_box'>
+                                구글로 계속하기
+                            </div>
+                            <div class = 'googlekakao_box'>
+                                카카오로 계속하기
+                            </div>
+
+                            <div class = 'list_box' style="text-align: center;">
+                                <sapn style = "color: gray; font-size: 110%; ">───────　또는　───────</sapn>
+                            </div>
+                            <div class = 'list_box'>
+
+                           
+
+                                <div class = 'input_box'>
+                                    <input type="email" name="email" placeholder="이메일">
+                                    <span id="email_text" style="margin-left : 5px; display: none;">이메일</span>
+                                </div>
+                                <div class = 'input_box' style="margin-top: 10px;">
+                                    <input type="password" name="password" placeholder="비밀번호">
+                                    <span id="pw_text" style="margin-left : 5px; display: none;">비밀번호</span>
+                                </div>
+
+                                <div class="input_box" style="margin-top: 20px;">
+                                    {% if request.GET.result == 'fail' %}
+                                    <p style="text-align: center; ;">
+                                        가입하지 않은 아이디이거나<br>잘못된 비밀번호입니다.
+                                    </p>
+                                    {% endif %}
+                                </div>
+
+                            </div>
+                            
+                            <input type="submit" value="로그인" class="input_pretty"  >
+                            
+
+                            <div class = 'text_box' >                   
+                                <a href='/sign_agree' >회원가입</a>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </form>
+
+                
+                
+				
+{% endblock %}

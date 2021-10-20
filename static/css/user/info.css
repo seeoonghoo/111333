@@ -1,0 +1,189 @@
+a {text-decoration: none;color: black;}
+    /* label { font-size: 6vmin;} */
+    
+    @media ( min-width: 200px ) {
+        /* 틀을 잡아주는 가장 큰 박스 */
+        .big_box{
+            float:inherit;
+            width : 100%;
+            height: 100%;
+            margin : 70px auto;
+        }
+
+        /* 중간에 있는 하얀색 박스 */
+        .middle_box{
+            width : 100%;
+            background-color: white;
+            margin: 5% auto;
+            display: inline-block;
+        }
+
+        /* 제목들을 적어놓은 박스 ex. 내정보, 섭취중인 건기식 */
+        .title_box{
+            width: 90%;
+            margin: 5% auto ;
+            font-size: 130%;
+        }
+
+        /* 수정하기/로그아웃 사용 박스 */
+        .revise_box{
+            width : 40%;
+            float: right;
+            font-size: 80%;
+            text-align: right;
+        }
+
+        /* 내정보 적어놓는 박스 */
+        .small_box{
+            width: 100%;
+            display: inline-block;
+            padding: 2% 0;
+            margin: 0;
+        }
+
+        /* 섭취정보에서 스몰박스 */
+        .small_box_user{
+            width: 100%;
+            display: inline-block;
+            padding: 2% 0;
+            margin: 0;
+        }
+
+        /* 이미지 넣어놓는 박스 */
+        .image_box{
+            float: left;
+            width : 25%;
+            margin-left : 2%;
+            max-height: 95px;
+        }
+        .image_box img{
+            width: 100%;
+            max-height: 95px;
+        }
+
+        /* 약정보 등등 들어가는 박스 */
+        .text_box{
+            float: right;
+            width : 60%;
+            margin-right: 1%;
+            font-size: 100%;
+            max-height: 85px;
+            padding : 5px 0;
+        }
+
+        /* 유저 정보 들어가는 박스 */
+        .text_box_user{
+            float: right;
+            width : 65%;
+            margin-right: 5%;
+            font-size: 90%;
+            max-height: 85px;
+            padding : 5px 0;
+        }
+
+        /* 삭제 박스 */
+        .x_box{
+            width: 7%;
+            float: right;
+            margin-top: 10%;
+            margin-right:3%;
+            font-size: 70%;
+        }
+
+        /* 상태 입력하는 select를 갖고 있는 박스 */
+        .select_box{
+            width: 50%;
+            float: left;
+            margin-top: 1%;
+            margin-left: 2%;
+        }
+
+        /* select css */
+        .select_css{
+            width: 100%;
+            font-size: 90%;
+        }
+
+        /* 성분 표시에서 가장 큰 박스 */
+        .total_box{
+            width : 90%;
+            display: inline-block;
+            padding: 1% 5%;
+            font-size: 100%;
+        }
+
+        /* 권장량 없응거 큰 박스 */
+        .total_box_except{
+            width : 90%;
+            display: inline-block;
+            padding: 1% 5%;
+            font-size: 100%;
+        }
+
+        /* 임산부 수유부용 css */
+        .total_box_good{
+            width : 90%;
+            display: inline-block;
+            padding: 1% 5%;
+            font-size: 100%;
+        }
+        .total_box_nice{
+            width : 90%;
+            display: inline-block;
+            padding: 1% 5%;
+            font-size: 100%;
+        }
+
+        /* 성분 이름 */
+        .total_name_box{
+            float: left;
+            width : 40%;
+            height: inherit;
+            font-size: 90%;
+        }
+
+        /* 성분 함량 수 계산 */
+        .total_count_box{
+            float: left;
+            width : 50%;
+            font-size: 90%;
+        }
+
+        /* 성분 퍼센트 */
+        .total_per_box{
+            float: left;
+            width : 45%;
+            font-size: 90%;
+            text-align: right;
+        }
+
+        /* 성분 충족부족보통 */
+        .total_color_box{
+            float: right;
+            width : 10%;
+            font-size: 90%;
+            text-align: right;
+        }
+
+        /* ... 이것 저것 리스트 틀 */
+        ul.tabs_4{
+            left: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            display: inline-block;
+        }
+
+        /* ... 리스트 */
+        ul.tabs_4 li{
+            width: 15%;
+            color: gray;
+            padding: 5%;
+            font-size: 100%;
+            margin:0;
+            cursor: pointer;
+            text-align: center;
+            float: left;
+        }
+             
+    }

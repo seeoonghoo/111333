@@ -1,0 +1,107 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/main/notice.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main/header_except_home.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+
+
+{% csrf_token %}
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='/static/javascript/main/notice.js'></script>
+
+                <div class="header">
+                    <!-- 여기선 사이트맵 드롭다운 -->
+                    <div class="header_menu_html">
+                        <div class="header" style="border-bottom: 1px solid lightgrey;">
+                            <div class = "header_image_box">
+                                <a href="/"><img src="/static/images/real_title.png" style="width: 100%; height: 100%;" ></a>
+                            </div>
+                            <div class = "header_menu_box_back">
+                                X
+                            </div>
+                        </div>
+                        <div class = "margin_box"  >
+                            <div class = "site_map">
+                                <ul class="tabs_map">
+                                    <li class="tab-link_map current" data-tab_map="tab-1map">홈</li>
+                                    <li class="tab-link_map" data-tab_map="tab-2map">검색</li>
+                                    <li class="tab-link_map" data-tab_map="tab-3map">성분확인</li>
+                                    <li class="tab-link_map" data-tab_map="tab-4map">고객센터</li>
+                                </ul>
+                                <div id="tab-1map" class="tab-content_map current">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">공지사항</li>
+                                        <li><a href = '/notice'>공지사항</a></li>
+                                        <li>회사소개</li>
+                                    </ul>
+                                    <br>
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">서비스</li>
+                                        <li><a href = '/exhibitions'>기획전</a></li>
+                                        <li><a href = '/exhibitions'>맞춤형 추천</a></li>
+                                    </ul>
+                                </div>
+                
+                                <div id="tab-2map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">검색</li>
+                                        <li><a href = '/camera'>이미지 검색</a></li>
+                                        <li><a href = '/camera'>텍스트 검색</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-3map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">성분 확인</li>
+                                        <li><a href = '/'>섭취중인 건강기능식품</a></li>
+                                        <li><a href = '/'>권장량대비 섭취비율</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-4map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">마이페이지</li>
+                                        <li><a href = '/info_form'>마이페이지</a></li>
+                                        <li><a href = '/faq'>자주 묻는 질문</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 여기까지 -->
+                    <div class = "header_back_box">
+                        <img src = '/static/images/back.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_menu_box">
+                        <img src = '/static/images/menu.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_text_box">
+                        <br>공지사항
+                    </div>
+
+                </div>
+
+                <div class = 'big_box'>
+                    {% for notice in notice_list %}
+                    <div class = 'for_jsp'>
+                        <div class = 'hot_recent_list' data-tab="{{notice.notice_no}}">
+                            <div class = "hot_recent_list_text">
+                                <span id = "for_date">{{notice.real_notice_date}}</span> <br>
+                                {{notice.notice_title}}
+                            </div>
+                        </div>
+                        <div class = "hide_and_seek" id="{{notice.notice_no}}">
+                            <div class ="hide_and_seek_text">
+                                {{notice.notice_content}}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                
+				
+{% endblock %}

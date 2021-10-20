@@ -1,0 +1,107 @@
+a {text-decoration: none;color : black; font-size: 14px;}
+    /* label { text-size-adjust: 10px;} */
+    
+    @media ( min-width: 200px ) {
+
+        /* 틀을 잡아주는 가장 큰 박스 */
+        .big_box{
+            float:inherit;
+            width : 95%;
+            height: 100%;
+            margin : 0 auto;
+        }
+
+        /* 중간에 있는 하얀색 박스 */
+        .middle_box{
+            width : 100%;
+            border-radius: 5vmin;
+            margin: 5% auto;
+            display: inline-block;
+        }
+
+        /* 애들 감싸주는 박스 */
+        .list_box {
+            width : 90%;
+            margin : 10% auto;
+        }
+
+        /* input 박스 */
+        .input_box {
+            margin: 0;
+            width : 100%;
+
+        /* 이메일 입력창 */
+        }
+        input[type=email] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 100%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+
+        /* 이메일 입력창 입력시 */
+        input[type=email]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+
+        /* 비밀번호 입력창 */
+        input[type=password] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 100%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+
+        /* 비밀번호 입력창 입력시 */
+        input[type=password]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+        
+        /* 로그인 버튼 */
+        .input_pretty{
+            -webkit-appearance:none;
+            width: 90%;
+            font-size: 120%;
+            padding: 5% 10%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+            margin: 3% 0;
+            margin-left: 5%;
+        }
+
+        /* 구글 카카오 박스 */
+        .googlekakao_box{
+            -webkit-appearance:none;
+            width: 80%;
+            font-size: 120%;
+            padding: 5% 5%;
+            border : 2px solid #dee1e5;
+            background-color: white;
+            color: black;
+            margin: 3% 0;
+            text-align: center;
+            margin-left: 5%;
+        }
+
+        /* 비번찾기 뭐 이런거 적어놓은 박스 */
+        .text_box{
+            margin: auto;
+            width : 80%;
+            margin-bottom: 100px;
+            text-align: center;
+            font-size: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+            font-size: 100%;
+        }
+        
+        
+    }

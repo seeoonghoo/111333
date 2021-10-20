@@ -1,0 +1,176 @@
+
+@media ( min-width: 200px ) {
+
+    /* 상단바 */
+    .header{
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        position: fixed;
+        top : 0;
+        left: 0;
+        display: inline-block;
+        z-index: 1234125;
+
+    }
+
+    /* 현재 화면 설명 텍스트 */
+    .header_text_box{
+        width: 50%;
+        height: 60px;
+        float: left;
+        margin-left: 9% ;
+        text-align: center;
+        font-weight: bold;
+        font-size: 120%;
+
+    }
+
+    /* 뒤로가기 버튼 */
+    .header_back_box{
+        width: 10%;
+        height: 30px;
+        margin : 15px 3%;
+        float: left;
+        font-size: 200%;
+    }
+
+    /* 텍스트 검색 숨기는 버튼 */
+    .header_text_hide{
+        width: 10%;
+        height: 30px;
+        margin : 15px 3%;
+        float: left;
+        font-size: 200%;
+    }
+
+    /* 사이트맵에서 약장수 이미지 */
+    .header_image_box{
+        width: 30%;
+        height: 60px;
+        float: left;
+    }
+
+    /* 사이트맵 열기 버튼 */
+    .header_menu_box{
+        width: 10%;
+        height: 40px;
+        margin : 10px 3%;
+        float: right;
+        font-size: 200%;
+    }
+
+    /* 사이트맵 숨기기(x) 버튼 */
+    .header_menu_box_back{
+        height: 60px;
+        float: right;
+        padding: 2%;
+        font-size: 200%;
+    }
+
+    /* 사이트맵 배경 */
+    .header_menu_html{
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        top : 0;
+        right: 0;
+        z-index: 1004;
+        position: absolute;
+    }
+
+    /* 사이트맵 박스 */
+    .site_map{
+        display: inline-block; 
+        width: 100%;
+        margin-top: 1px;
+    }
+
+    /* 공간 확보 */
+    .margin_box{
+        margin-top: 60px;
+        margin-bottom: 110px;
+    }
+
+
+    /* 사이트맵 탭 */
+    ul.tabs_map{
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 20%;
+        height: 100%;
+        float: left;
+    }
+
+    /* 사이트맵 탭 리스트 */
+    ul.tabs_map li{
+        width: 80%;
+        color: gray;
+        padding: 50% 20%;
+        font-size: 100%;
+        margin:0;
+        cursor: pointer;
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+    }
+    
+    /* 사이트맵 탭 현재 선택 */
+    ul.tabs_map li.current{
+        color: #24994c;
+        border-bottom: 1px solid lightgray;
+        border-right: 0px solid lightgray;
+    }
+
+    /* 사이트맵 화면 */
+    .tab-content_map{
+        display: none;
+        float: right;
+    }
+    
+    /* 사이트맵 탭 현재 선택시 화면 */
+    .tab-content_map.current{
+        display: inherit;
+        float: right;
+        width: 50%;
+        margin-right :25%;
+        margin-top: 10%;
+    }
+
+    /* 사이트맵 탭 현재 선택시 화면에 나타나는 리스트 */
+    .tab-content_map.current ul li{
+        margin: 0;
+        margin-bottom: 10%;
+    }
+    
+
+}
+
+/* 하이퍼링크 꾸미기 */
+a {text-decoration: none;color: black;}
+
+/* 로딩 화면 */
+#load {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;
+    
+}
+
+/* 로딩 화면 이미지(로딩중) */
+#load > img {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+
+}

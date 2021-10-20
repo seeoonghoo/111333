@@ -1,0 +1,388 @@
+
+@media ( min-width: 200px ) {
+    
+    /* 가장 큰 틀 */
+    .big_box{
+        float:inherit;
+        width : 100%;
+        height: 100%;
+        margin : 70px auto;
+    }
+
+    /* 상단바 */
+    .header{
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        position: fixed;
+        top : 0;
+        left: 0;
+        display: inline-block;
+        z-index: 1234125;
+
+    }
+
+    /* 기획전 텍스트 */
+    .header_text_box{
+        width: 50%;
+        height: 60px;
+        float: left;
+        margin-left: 9% ;
+        text-align: center;
+        font-weight: bold;
+        font-size: 120%;
+    }
+
+    /* 뒤로 가기 */
+    .header_back_box{
+        width: 10%;
+        height: 30px;
+        margin : 15px 3%;
+        float: left;
+        font-size: 200%;
+    }
+
+    /* 사이트맵 이미지 */
+    .header_image_box{
+        width: 30%;
+        height: 60px;
+        float: left;
+    }
+
+    /* 사이트맵 들어가기 */
+    .header_menu_box{
+        width: 10%;
+        height: 40px;
+        margin : 10px 3%;
+        float: right;
+        font-size: 200%;
+    }
+
+    /* 사이트맵 없애기 */
+    .header_menu_box_back{
+        height: 60px;
+        float: right;
+        padding: 2%;
+        font-size: 200%;
+    }
+
+    /* 사이트맵 배경 */
+    .header_menu_html{
+        background-color: white;
+        width: 100%;
+        height: 100vh;
+        top : 0;
+        right: 0;
+        z-index: 1004;
+        position: absolute;
+    }
+
+
+    /* 중간 2개 탭 */
+    ul.tabs{
+        margin-top: 60px;
+        height: 10px;
+        left: 0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        position: fixed;
+        display: inline-block;
+    }
+
+    /* 중간 2개 탭 */
+    ul.tabs li{
+        width: 40%;
+        height: 10px;
+        background-color: white;
+        color: gray;
+        padding: 5%;
+        font-size: 100%;
+        margin:0;
+        cursor: pointer;
+        text-align: center;
+        float: left;
+    }
+    
+    /* 중간 2개 탭 클릭시 */
+    ul.tabs li.current{
+        background: white;
+        color: #24994c;
+        border-bottom: 4px solid #24994c;
+        font-weight: bold;
+    }
+    
+    /* 중간 2개 탭 화면 */
+    .tab-content{
+        display: none;
+    }
+    
+    /* 중간 2개 탭 현재 화면 */
+    .tab-content.current{
+        display: inherit;
+    }
+
+    /* 공간 확보 */
+    .margin_box{
+        margin-top: 110px;
+        margin-bottom: 110px;
+    }
+
+    /* 이미지 슬라이드 들어가는 박스 */
+    .slide_image_box{
+        width: 99.9%;
+        height: 30%;
+        min-height: 180px;
+    }
+
+    /* 4개씩 나오는거 박스 */
+    .select_menu_box{
+        width: 99.9%;
+        height: 20%;
+        min-height: 140px;
+    }
+
+    /* 인기 상품 배경 */
+    .white_box{
+        width : 94%;
+        min-height: 140px;
+        background-color: white;
+        border-radius: 5vmin;
+        margin: 2% 3%;
+        display: inline-block;
+    }
+
+    /* 인기 상품에 HOT 표시 */
+    .white_box_hot{
+        width : 7%;
+        position: absolute;
+        padding : 1% 5%;
+        background-color: #24994c;
+        border-radius: 5vmin;
+        text-align: center;
+        color: white;
+    }
+
+    /* 인기 상품 이미지 */
+    .white_box_image{
+        width : 30%;
+        margin: 5% 3%;
+        float: left;
+        
+    }
+
+    /* 인기 상품 텍스트 */
+    .white_box_text{
+        width: 58%;
+        height: 70%;
+        float: left;
+        margin-left: 2%;
+        padding : 5% 0;
+        font-size: 90%;
+        margin-top: 5%;
+    }
+
+    /* 인기 상품 상세보기 박스 */
+    .white_box_click{
+        width: 35%;
+        text-align: center;
+        float: left;
+        margin-top: 1%;
+        margin-left: 2%;
+        font-size: 100%;
+    }
+
+    /* 인기 상품 상세보기 버튼 */
+    .input_pretty{
+        -webkit-appearance:none;
+        width: 100%;
+        /* height: 7vh; */
+        border : 2px solid #24994c;
+        border-radius: 5px;
+        background-color: white;
+        color: #24994c;
+        padding: 5% 3%;
+        font-size: 100%;
+    }
+
+    /* 리스트 꾸미기 */
+    li {
+        list-style: none;
+    }       
+
+    /* 하이퍼링크 */
+    a {
+        color: #000;
+        text-decoration: none;
+    }        
+
+    /* 자동으로 넘어가는 화면 */
+    #visual {
+        position: relative;
+        width: 100%;
+        height: 180px;
+        margin: 0 auto;
+        overflow: hidden;           
+    }      
+
+    /* 자동으로 넘어가는 화면 박스 */
+    #visual>div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transition: 0.3s ease;
+        opacity: 0;
+    }
+
+    /* 자동으로 넘어가는 현재 화면 */
+    #visual>div.on{
+        opacity: 1;
+    }
+
+    /* 자동으로 넘어가는 화면 동그라미 */
+    #control { 
+        position: absolute;
+        width: 100%;
+        bottom: 10px;
+        text-align: center;         
+    }
+
+    /* 자동으로 넘어가는 화면 동그라미 클릭시 링크 */
+    #control a {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: #f6f5f5;                       
+        font-size: 0.8em;
+        border-radius: 14px;
+        margin: 0 5%;
+    }
+      
+    /* 자동으로 넘어가는 화면 동그라미 */
+    #control a.on {
+        background: #24994c;
+    }
+
+
+    /* 중간 4개 탭 큰 틀 */
+    ul.tabs_4{
+        left: 0;
+        padding: 0;
+        list-style: none;
+        width: 100%;
+        display: inline-block;
+    }
+
+    /* 중간 4개 탭 */
+    ul.tabs_4 li{
+        width: 15%;
+        color: gray;
+        padding: 5%;
+        font-size: 100%;
+        margin:0;
+        cursor: pointer;
+        text-align: center;
+        float: left;
+    }
+    
+    /* 중간 4개 탭 현재  */
+    ul.tabs_4 li.current{
+        color: #24994c;
+        border-bottom: 3px solid #24994c;
+        font-weight: bold;
+    }
+
+    /* 중간 4개 탭 화면 */
+    .tab-content_4{
+        display: none;
+    }
+    
+    /* 중간 4개 탭 현재 화면 */
+    .tab-content_4.current{
+        display: inherit;
+    }
+
+
+    /* 사이트맵 탭 */
+    ul.tabs_map{
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        width: 20%;
+        height: 100%;
+        float: left;
+    }
+
+    /* 사이트맵 탭 리스트 */
+    ul.tabs_map li{
+        width: 80%;
+        color: gray;
+        padding: 50% 20%;
+        font-size: 100%;
+        margin:0;
+        cursor: pointer;
+        text-align: center;
+        border-bottom: 1px solid lightgray;
+        border-right: 1px solid lightgray;
+    }
+    
+    /* 사이트맵 탭 현재 선택 */
+    ul.tabs_map li.current{
+        color: #24994c;
+        border-bottom: 1px solid lightgray;
+        border-right: 0px solid lightgray;
+    }
+
+    /* 사이트맵 화면 */
+    .tab-content_map{
+        display: none;
+        float: right;
+    }
+    
+    /* 사이트맵 탭 현재 선택시 화면 */
+    .tab-content_map.current{
+        display: inherit;
+        float: right;
+        width: 50%;
+        margin-right :25%;
+        margin-top: 10%;
+    }
+
+    /* 사이트맵 탭 현재 선택시 화면에 나타나는 리스트 */
+    .tab-content_map.current ul li{
+        margin: 0;
+        margin-bottom: 10%;
+    }
+    
+
+}
+
+
+/* 하이퍼링크 꾸미기 */
+a {text-decoration: none;color: black;}
+
+/* 로딩 화면 */
+#load {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: block;
+    opacity: 0.8;
+    background: white;
+    z-index: 99;
+    text-align: center;
+    
+}
+
+/* 로딩 화면 이미지(로딩중) */
+#load > img {
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+}

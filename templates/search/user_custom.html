@@ -1,0 +1,215 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/search/user_custom.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main/header_except_home.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+
+{% block contents %}
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='/static/javascript/search/user_custom.js'></script>
+
+<div class="header">
+                    <!-- 여기선 사이트맵 드롭다운 -->
+                    <div class="header_menu_html">
+                        <div class="header" style="border-bottom: 1px solid lightgrey;">
+                            <div class = "header_image_box">
+                                <a href="/"><img src="/static/images/real_title.png" style="width: 100%; height: 100%;" ></a>
+                            </div>
+                            <div class = "header_menu_box_back">
+                                X
+                            </div>
+                        </div>
+                        <div class = "margin_box"  >
+                            <div class = "site_map">
+                                <ul class="tabs_map">
+                                    <li class="tab-link_map current" data-tab_map="tab-1map">홈</li>
+                                    <li class="tab-link_map" data-tab_map="tab-2map">검색</li>
+                                    <li class="tab-link_map" data-tab_map="tab-3map">성분확인</li>
+                                    <li class="tab-link_map" data-tab_map="tab-4map">고객센터</li>
+                                </ul>
+                                <div id="tab-1map" class="tab-content_map current">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">공지사항</li>
+                                        <li><a href = '/notice'>공지사항</a></li>
+                                        <li>회사소개</li>
+                                    </ul>
+                                    <br>
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">서비스</li>
+                                        <li><a href = '/exhibitions'>기획전</a></li>
+                                        <li><a href = '/exhibitions'>맞춤형 추천</a></li>
+                                    </ul>
+                                </div>
+                
+                                <div id="tab-2map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">검색</li>
+                                        <li><a href = '/camera'>이미지 검색</a></li>
+                                        <li><a href = '/camera'>텍스트 검색</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-3map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">성분 확인</li>
+                                        <li><a href = '/'>섭취중인 건강기능식품</a></li>
+                                        <li><a href = '/'>권장량대비 섭취비율</a></li>
+                                    </ul>
+                                </div>
+                                <div id="tab-4map" class="tab-content_map">
+                                    <ul>
+                                        <li style="font-weight: bold; font-size: 150%;">마이페이지</li>
+                                        <li><a href = '/info_form'>마이페이지</a></li>
+                                        <li><a href = '/faq'>자주 묻는 질문</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 여기까지 -->
+                    <div class = "header_back_box">
+                        <img src = '/static/images/back.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_menu_box">
+                        <img src = '/static/images/menu.png' style="width:100%; height: 100%;">
+                    </div>
+                    <div class = "header_text_box">
+                        <a href = "/login_form/"><br>건강기능식품 추가</a>
+                    </div>
+                
+                </div>
+                <form method="POST" action="/custom_register" enctype="multipart/form-data" onsubmit='return concate()'>
+                {% csrf_token %}
+                <div class="big_box">
+                    <div class="middle_box">
+                        <div class="camera_box" id = "image_container" name = "classfication">
+                            
+                        </div>
+                        <div class="name_box" style="display: none;">
+                            <span style="color: red;">필수 정보입니다.</span><br>
+                        </div>
+
+                        <div class="upload_box"> 
+                            <label for="image" >카메라</label>
+                            <input type="file" id="image" accept="image/*" name='bull' onchange="setThumbnail(event);"/> 
+                        </div>
+
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >건강기능식품 이름</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="text" id="name" name="name" >
+                                <span id="name_alert" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                            </div>
+                        </div>
+
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >건강기능식품 브랜드</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="text" id="brand" name="brand" >
+                                <span id="brand_alert" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                            </div>
+                        </div>
+
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >개수</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="number" id="number" name="number" class="number_per_day">
+                                <span id="number_alert" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                            </div>
+                        </div>
+
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >하루 총 섭취 개수</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type="number" id="per_day" name="per_day" class="number_per_day">
+                                <span id="per_day_alert" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                            </div>
+                        </div>
+
+                        <div class = 'list_box'>
+                            <div class = 'text_box'>
+                                <label for="name" >성분 정보</label>
+                            </div>
+                            <div class="option_search_box_big" id = "extract_big_box">
+                                
+                                <div class= "option_search_box_big_list" id ='select_extract_big'>
+                                    <div class = 'select_extract_option_list' >비타민A</div>
+                                    <div class = 'select_extract_option_list' >비타민B1 (티아민)</div>
+                                    <div class = 'select_extract_option_list' >비타민B2 (리보플라빈)</div>
+                                    <div class = 'select_extract_option_list' >비타민B3 (나이아신)</div>
+                                    <div class = 'select_extract_option_list' >비타민B5 (판토텐산)</div>
+                                    <div class = 'select_extract_option_list' >비타민B6 (피리독신)</div>
+                                    <div class = 'select_extract_option_list' >비타민B7 (비오틴)</div>
+                                    <div class = 'select_extract_option_list' >비타민B9 (엽산)</div>
+                                    <div class = 'select_extract_option_list' >비타민B9 (합성엽산)</div>
+                                    <div class = 'select_extract_option_list' >비타민B12 (코발라민)</div>
+                                    <div class = 'select_extract_option_list' >비타민C</div>
+                                    <div class = 'select_extract_option_list' >비타민D</div>
+                                    <div class = 'select_extract_option_list' >비타민E</div>
+                                    <div class = 'select_extract_option_list' >비타민K</div>
+                                    <div class = 'select_extract_option_list' >구리</div>
+                                    <div class = 'select_extract_option_list' >글루코사민</div>
+                                    <div class = 'select_extract_option_list' >카테킨</div>
+                                    <div class = 'select_extract_option_list' >마그네슘</div>
+                                    <div class = 'select_extract_option_list' >망간</div>
+                                    <div class = 'select_extract_option_list' >몰리브덴</div>
+                                    <div class = 'select_extract_option_list' >베타카로틴</div>
+                                    <div class = 'select_extract_option_list' >셀레늄 (셀렌)</div>
+                                    <div class = 'select_extract_option_list' >EPA+DHA</div>
+                                    <div class = 'select_extract_option_list' >아연</div>
+                                    <div class = 'select_extract_option_list' >아스타잔틴</div>
+                                    <div class = 'select_extract_option_list' >요오드</div>
+                                    <div class = 'select_extract_option_list' >철</div>
+                                    <div class = 'select_extract_option_list' >칼슘</div>
+                                    <div class = 'select_extract_option_list' >크롬</div>
+                                    <div class = 'select_extract_option_list' >유산균 (프로바이오틱스)</div>
+                                    <div class = 'select_extract_option_list' >실리마린</div>
+                                    <div class = 'select_extract_option_list' >지아잔틴</div>
+                                    <div class = 'select_extract_option_list' >루테인</div>
+                                    <div class = 'select_extract_option_list' >인</div>
+                                    <div class = 'select_extract_option_list' >염소</div>
+                                    <div class = 'select_extract_option_list' >칼륨 (포타슘)</div>
+                                    <div class = 'select_extract_option_list' >Chlorogenic acid</div>
+                                    <div class = 'select_extract_option_list' >Paeoniflorin</div>
+                                    <div class = 'select_extract_option_list' >Nodakenin</div>
+                                    <div class = 'select_extract_option_list' >공액리놀레산</div>
+                                    <div class = 'select_extract_option_list' >총(-)-Hydroxycitric acid</div>
+                                    <div class = 'select_extract_option_list' >옥타코사놀</div>
+                                    <div class = 'select_extract_option_list' >불소</div>
+                                </div>
+                            </div>
+                            <span id="extract_alert" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                        </div>
+
+                        <div class = 'list_box' >
+                            <div class = 'text_box'>
+                                <label for="birth" >등록일자</label>
+                            </div>
+                            <div class = 'input_box'>
+                                <input type='date' id='date' name ="date">
+                                <span id="birth_text" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <input  name = 'db_no' value="{{cau_result.main_db_no}}"style="display: none;"></span>
+                    <input type="submit" value="등록"  class="input_pretty">
+                </div>
+                <div class="extract_dosage" style="display:none;">
+                    <input type="text" name ="extract" id = "extract" style="display: none;">
+                    <input type="text" name ="dosage" id = "dosage" style="display: none;">
+                </div>
+                </form>
+            
+				
+{% endblock %}

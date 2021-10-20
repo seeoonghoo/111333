@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/user/sign.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+{% block contents %}
+<script src='/static/javascript/user/info_drug_null.js'></script>
+
+                <div class = 'big_box'>
+                    <div class="middle_box">
+                        <div class="success_box">
+                            등록된 약이 없습니다 :(
+                        </div>
+                    </div>
+                    <input type="submit" value="건강기능식품 검색하기" class="input_pretty" >      
+                </div>
+		
+{% endblock %}

@@ -1,0 +1,212 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+<link href="/static/css/search/output.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main/header_except_home.css" rel="stylesheet" type="text/css">
+
+{% endblock %}
+
+
+{% block contents %}
+<script src='/static/javascript/search/output.js'></script>
+
+<div class="header">
+    <!-- 여기선 사이트맵 드롭다운 -->
+    <div class="header_menu_html">
+        <div class="header" style="border-bottom: 1px solid lightgrey;">
+            <div class = "header_image_box">
+                <a href="/"><img src="/static/images/real_title.png" style="width: 100%; height: 100%;" ></a>
+            </div>
+            <div class = "header_menu_box_back">
+                X
+            </div>
+        </div>
+        <div class = "margin_box"  >
+            <div class = "site_map">
+                <ul class="tabs_map">
+                    <li class="tab-link_map current" data-tab_map="tab-1map">홈</li>
+                    <li class="tab-link_map" data-tab_map="tab-2map">검색</li>
+                    <li class="tab-link_map" data-tab_map="tab-3map">성분확인</li>
+                    <li class="tab-link_map" data-tab_map="tab-4map">고객센터</li>
+                </ul>
+                <div id="tab-1map" class="tab-content_map current">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">공지사항</li>
+                        <li><a href = '/notice'>공지사항</a></li>
+                        <li>회사소개</li>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">서비스</li>
+                        <li><a href = '/exhibitions'>기획전</a></li>
+                        <li><a href = '/exhibitions'>맞춤형 추천</a></li>
+                    </ul>
+                </div>
+
+                <div id="tab-2map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">검색</li>
+                        <li><a href = '/camera'>이미지 검색</a></li>
+                        <li><a href = '/camera'>텍스트 검색</a></li>
+                    </ul>
+                </div>
+                <div id="tab-3map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">성분 확인</li>
+                        <li><a href = '/'>섭취중인 건강기능식품</a></li>
+                        <li><a href = '/'>권장량대비 섭취비율</a></li>
+                    </ul>
+                </div>
+                <div id="tab-4map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">마이페이지</li>
+                        <li><a href = '/info_form'>마이페이지</a></li>
+                        <li><a href = '/faq'>자주 묻는 질문</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 여기까지 -->
+    <div class = "header_back_box">
+        <img src = '/static/images/back.png' style="width:100%; height: 100%;">
+    </div>
+    <div class = "header_menu_box">
+        <img src = '/static/images/menu.png' style="width:100%; height: 100%;">
+    </div>
+    <div class = "header_text_box">
+        <a href = "/login_form/"><br>제품 소개</a>
+    </div>
+
+</div>
+
+<form method="post" action="/prod_register" onsubmit='return concate()'>
+    {% csrf_token %}
+    <div class="big_box">
+        
+        {% if cau_result.name != none %}
+        <div class = 'middle_box'>
+            <div class="camera_box">
+                <img src="{{cau_result.image}}" name = 'image' width="100%" height="100%">
+            </div>
+            <div class="name_box">
+                <span style="font-size: 90%; color: #b0b0b0;">{{cau_result.brand}}</span><br>
+                {{cau_result.name}}
+            </div>
+        </div>
+       
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>섭취시기</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            
+            <div class="caution_box">
+                <div class = 'caution_list_box'>
+                    {{cau_result.intake_info}}
+                </div>
+            </div>
+        </div>
+
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>보관방법</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            
+            <div class="caution_box">
+                <div class = 'caution_list_box'>
+                    {{cau_result.storage_caution}}
+                </div>
+            </div>
+        </div>
+
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>주의사항</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            
+            <div class="caution_box">
+                <div class = 'caution_list_box'>
+                    {{cau_result.prod_caution}}
+                </div>
+            </div>
+        </div>
+
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>효능</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            
+            <div class="caution_box">
+                <div class = 'caution_list_box'>
+                    {{cau_result.prod_effectiveness}}
+                </div>
+            </div>
+        </div>
+       
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>상세성분</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            <div class="info_box">
+                <div class = 'info_list_box'>
+                    <span>성분명</span>
+                </div>
+                <div class = 'info_name_box'>
+                    <span>함량</span>
+                </div>
+            </div>
+            {% for t in ext_result %}
+            <div class="info_box">
+                <div class = 'info_list_box'>
+                    {{t.extract_name}}
+                </div>
+                <div class = 'info_name_box'>
+                    {{t.dosage}}{{t.unit}}
+                </div>
+            </div>
+            {% endfor %}
+
+
+        </div>
+        
+        <div class = 'middle_box'>
+            <div class="caution_box">
+                <span>섭취시작날짜</span>
+                <hr color="#f4f6f8" size="1px">
+            </div>
+            
+            <div class="caution_box">
+                    <input type='date' name='date' id='currentDate'>
+                    <span id="birth_text" style="display: none; font-size: 80%; margin-top: 10px;">필수 정보입니다.</span>
+            </div>
+
+        </div>
+        {% else %}
+        <div class = 'result_none'>결과가 없습니다.</div>
+        {% endif %}        
+        <div class="middle_box">
+            <div class="caution_box">
+                <a href="/camera">다시검색하기</a>
+            </div>
+        </div>
+
+        <div class="middle_box">
+            <div class="caution_box">
+                <a href="/user_custom">찾으시는 약이 없나요???</a>
+            </div>
+        </div>
+
+        {% if cau_result.name != none %}
+                <input  name = 'db_no' value="{{cau_result.main_db_no}}"style="display: none;"></span>
+                <input type="submit" value="등록"  class="input_pretty">
+        {% endif %}
+    </div>
+</form>
+				
+{% endblock %}

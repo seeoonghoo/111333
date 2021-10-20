@@ -1,0 +1,207 @@
+a {text-decoration: none;color: black;}
+    /* label { font-size: 4vmin;} */
+    /* span { font-size: 4vmin;} */
+    
+    @media ( min-width: 200px ) {
+        
+        /* 하얀색 박스 */
+        .big_box{
+            width : 100%;
+            border-radius: 5vmin;
+            margin: 5% auto;
+            display: inline-block;
+            margin-bottom: 100px;
+        }
+        /* 제목들을 적어놓은 박스 ex. 내정보, 섭취중인 건기식 */
+        .title_box{
+            width: 90%;
+            margin: 5% auto ;
+            font-size: 150%;
+        }
+
+        /* 전체 동의 체크 박스 */
+        .agree_box_all{
+            width: 90%;
+            font-size: 130%;
+            margin: 2.5% auto;
+            text-align: left;
+        }
+
+        /* 동의 체크 있는 박스 */
+        .agree_box{
+            float: right;
+            width: 20%;
+            font-size: 80%;
+            text-align: right;
+        }
+
+        /* 약관 이름 박스 */
+        .terms_box_title {
+            width : 90%;
+            margin : 3% auto;
+            font-size: 110%;
+        }
+
+        /* 약관 내용 박스 */
+        .terms_box{
+            width : 90%;
+            height: 120px;
+            margin : 0 auto;
+            border: 1px solid black;
+            overflow : auto;
+        }
+
+        /* 등록 버튼 이쁘게 */
+        .input_pretty{
+            -webkit-appearance:none;
+            width: 90%;
+            font-size: 120%;
+            padding: 5% 10%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+            margin: 3% 0;
+            margin-left: 5%;
+        }
+
+        /* 뭐시기로 이동 */
+        .text_chech{
+            -webkit-appearance:none;
+            width: 70%;
+            font-size: 100%;
+            padding: 3% 10%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        /* 처음화면 줄일라고 */
+        .input_pretty_first{
+            -webkit-appearance:none;
+            width: 90%;
+            font-size: 120%;
+            padding: 5% 10%;
+            border : 1px solid whitesmoke;
+            background-color: #24994c;
+            color: white;
+            margin: 0.5% 0;
+            margin-left: 5%;
+        }
+
+        /* 라인 하나씩 딴 박스 */
+        .list_box {
+            width : 90%;
+            height: 110px;
+            margin : 40px auto;
+            font-size: 130%;
+        }
+
+        /* 이메일 비밀번호 비밀번호확인 이런거 적는 박스 */
+        .text_box {
+            float : left;
+            width : 90%;
+            height: 20px;
+            font-size: 85%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* 입력하는거 있는 박스 */
+        .input_box_email {
+            float: left;
+            width : 72%;
+            height: 60px;
+            margin-right: 3%;
+        }
+
+        .input_box {
+            float: left;
+            width : 99%;
+            height: 60px;
+            margin-right: 3%;
+        }
+
+        /* 이메일중복체크  */
+        .check_email{
+            -webkit-appearance:none;
+            width: 25%;
+            background-color: #24994c;
+            border : 2px solid whitesmoke;            
+            font-size: 80%;
+            height: 60px;
+        }
+
+        input[type=email] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 90%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+        input[type=email]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+        input[type=text] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 90%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+        input[type=text]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+        input[type=password] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 90%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+        input[type=password]:focus {
+            outline-style: none;
+            border:2px green solid;
+        }
+        input[type=date] {
+            border : 2px solid #dee1e5;
+            width : 90%;
+            font-size : 90%;
+            height: 50px;
+            padding : 5px 5%;
+        }
+        input[type=radio] {
+            border : 1px solid black;
+            width : 20%;
+            font-size : 200%;
+        }
+
+        /* 내정보 수정 */
+        .revise_info_box{
+            height: 100px;
+            width : 100%;
+            font-size : 300%;
+        }
+        
+        /* 가입 성공 */
+        .success_box{
+            width: 100%;
+            text-align: center;
+            font-size: 150%;
+            margin-top: 70%;
+            margin-bottom: 10%;
+        }
+
+        .success_box_first{
+            width: 100%;
+            text-align: center;
+            font-size: 150%;
+            margin-top: 10%;
+            margin-bottom: 10%;
+        }
+        
+
+    }

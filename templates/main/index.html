@@ -1,0 +1,201 @@
+{% extends '../base.html' %}
+
+{% block css_link %}
+
+
+<link href="/static/css/main/index.css" rel="stylesheet" type="text/css">
+<link href="/static/css/main/home.css" rel="stylesheet" type="text/css">
+<!-- <link href="/static/css/main/header_except_home.css" rel="stylesheet" type="text/css"> -->
+
+{% endblock %}
+
+{% block contents %}
+<script src='https://code.jquery.com/jquery-3.3.1.min.js'></script>
+<script src='/static/javascript/main/index.js'></script>
+                
+<div class="header">
+    <!-- 여기선 사이트맵 드롭다운 -->
+    <div class="header_menu_html">
+        <div class="header" style="border-bottom: 1px solid lightgrey;">
+            <div class = "header_image_box">
+                <a href="/"><img src="/static/images/real_title.png" style="width: 100%; height: 100%;" ></a>
+            </div>
+            <div class = "header_menu_box_back">
+                X
+            </div>
+        </div>
+        <div class = "margin_box"  >
+            <div class = "site_map">
+                <ul class="tabs_map">
+                    <li class="tab-link_map current" data-tab_map="tab-1map">홈</li>
+                    <li class="tab-link_map" data-tab_map="tab-2map">검색</li>
+                    <li class="tab-link_map" data-tab_map="tab-3map">성분확인</li>
+                    <li class="tab-link_map" data-tab_map="tab-4map">고객센터</li>
+                </ul>
+                <div id="tab-1map" class="tab-content_map current">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">공지사항</li>
+                        <li><a href = '/notice'>공지사항</a></li>
+                        <li>회사소개</li>
+                    </ul>
+                    <br>
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">서비스</li>
+                        <li><a href = '/exhibitions'>기획전</a></li>
+                        <li><a href = '/exhibitions'>맞춤형 추천</a></li>
+                    </ul>
+                </div>
+
+                <div id="tab-2map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">검색</li>
+                        <li><a href = '/camera'>이미지 검색</a></li>
+                        <li><a href = '/camera'>텍스트 검색</a></li>
+                    </ul>
+                </div>
+                <div id="tab-3map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">성분 확인</li>
+                        <li><a href = '/'>섭취중인 건강기능식품</a></li>
+                        <li><a href = '/'>권장량대비 섭취비율</a></li>
+                    </ul>
+                </div>
+                <div id="tab-4map" class="tab-content_map">
+                    <ul>
+                        <li style="font-weight: bold; font-size: 150%;">마이페이지</li>
+                        <li><a href = '/info_form'>마이페이지</a></li>
+                        <li><a href = '/faq'>자주 묻는 질문</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 여기까지 -->
+    <div class = "header_back_box">
+        <img src = '/static/images/back.png' style="width:100%; height: 100%;">
+    </div>
+    <div class = "header_menu_box">
+        <img src = '/static/images/menu.png' style="width:100%; height: 100%;">
+    </div>
+    <div class = "header_text_box" >
+        <a href = "/login_form/"><br>기획전</a>
+    </div>
+</div>
+
+                
+
+                <div class="margin_box">
+                    <div id="tab-123" class="tab-content current">
+                    
+                        <div class="slide_image_box">
+                            <div id="visual">     
+                                <div class="on"><a href="#"><img src="/static/images/111.jpg" alt="1" width="100%" height="100%"></a></div>
+                                <div><a href="#"><img src="/static/images/222.jpg" alt="2" width="100%" height="100%"></a></div>
+                                <div><a href="#"><img src="/static/images/333.jpg" alt="3" width="100%" height="100%"></a></div>
+                                <div><a href="#"><img src="/static/images/444.jpg" alt="4" width="100%" height="100%"></a></div>     
+                           <section id="control">
+                               <a class="on" href="#"></a>
+                               <a href="#"></a>
+                               <a href="#"></a>
+                               <a href="#"></a>
+                           </section>
+                     </div>
+                        </div>
+
+                        <div class="select_menu_box">
+                            <ul class="tabs_4">
+                                <li class="tab-link_4 current" data-tab_4="tab-11"><image id='one' src = "/static/images/home.png" style="width: 60%; height: 60%; padding: 5%;"></image><br>비타민</li>
+                                <li class="tab-link_4 " data-tab_4="tab-22"><image id='two' src = "/static/images/home.png" style="width: 60%; height: 60%; padding: 5%;"></image><br>비타민</li>
+                                <li class="tab-link_4" data-tab_4="tab-33"><image id='three' src = "/static/images/home.png" style="width: 60%; height: 60%; padding: 5%;"></image><br>오메가3</li>
+                                <li class="tab-link_4" data-tab_4="tab-44"><image id='four' src = "/static/images/home.png" style="width: 60%; height: 60%; padding: 5%;"></image><br>유산균</li>
+                            </ul>
+                            
+                            <div id="tab-11" class="tab-content_4 current">
+                                <div class="white_box">
+                                    <div class="white_box_hot">HOT</div>
+                                    <div class="white_box_image">
+                                        <img src = '/static/images/test.jpg' style="width: 100%; height: 100%;">
+                                    </div>
+                                    <div class="white_box_text">
+                                        
+                                        <span >멀티 비타민 미네랄 포 우먼 112정</span> <br>
+                                        <span style = "color: #b0b0b0; font-size: 90%;">화이자가 만들었어요</span>
+                                    </div>
+                                    <div class = "white_box_click" for_change="센트룸 실버 포맨">
+                                        <input type="submit" value="상세보기" class="input_pretty">
+                                    </div>
+                                </div>
+                                <div class="white_box">
+                                    <div class="white_box_hot">HOT</div>
+                                    <div class="white_box_image">
+                                        <img src = '/static/images/test.jpg' style="width: 100%; height: 100%;">
+                                    </div>
+                                    <div class="white_box_text">
+                                        
+                                        <span >멀티 비타민 미네랄 포 맨 112정</span> <br>
+                                        <span style = "color: #b0b0b0; font-size: 90%;">화이자가 만들었어요</span>
+                                    </div>
+                                    <div class = "white_box_click" for_change="센트룸 실버 포맨">
+                                        <input type="submit" value="상세보기" class="input_pretty">
+                                    </div>
+                                </div>
+                                <div class="white_box">
+                                    <div class="white_box_hot">HOT</div>
+                                    <div class="white_box_image">
+                                        <img src = '/static/images/test.jpg' style="width: 100%; height: 100%;">
+                                    </div>
+                                    <div class="white_box_text">
+                                        
+                                        <span >비타민C 1000 600정</span> <br>
+                                        <span style = "color: #b0b0b0; font-size: 90%;">화이자가 만들었어요</span>
+                                    </div>
+                                    <div class = "white_box_click" for_change="센트룸 실버 포맨">
+                                        <input type="submit" value="상세보기" class="input_pretty">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="tab-22" class="tab-content_4">
+                                <div class="white_box">
+                                    비타민
+                                </div>
+                                <div class="white_box">
+                                    aa
+                                </div>
+                            </div>
+                            <div id="tab-33" class="tab-content_4">
+                                <div class="white_box">
+                                    오메가3
+                                </div>
+                                <div class="white_box">
+                                    dasdfasd
+                                </div>
+                            </div>
+                            <div id="tab-44" class="tab-content_4">
+                                <div class="white_box">
+                                    유산균
+                                </div>
+                                <div class="white_box">
+                                    dasdfasd
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                        
+                    </div>
+    
+    
+                    <div id="tab-2" class="tab-content">
+                        <div class="slide_image_box">이미지 </div>
+
+                       
+                    </div>
+                </div>
+
+                
+
+
+                
+				
+{% endblock %}
