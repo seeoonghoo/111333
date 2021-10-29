@@ -429,36 +429,37 @@ def custom_register_model(user_no,img,name,brand,number,per_day,extract,dosage,d
     except OperationalError as e:
         print(f'error: {e}')
 
-# S3에 사진 업로드하고 해당 사진의 링크 가져오기
-import boto3
+# # S3에 사진 업로드하고 해당 사진의 링크 가져오기
+# import boto3
 
-AWS_ACCESS_KEY_ID = 'AKIAY476GMU573BOUD53'
-AWS_SECRET_ACCESS_KEY = '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'
+# AWS_ACCESS_KEY_ID = 'AKIAY476GMU573BOUD53'
+# AWS_SECRET_ACCESS_KEY = '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'
 
 def s3_upload(image_file,user_no,max_numbering):
+    print('ff')
     # 여기서 max_numbering은 이미 +1이 되어있는 거라서 건드리지 말 것
 
-    s3_client = boto3.client(
-		's3',
-		aws_access_key_id=AWS_ACCESS_KEY_ID,
-		aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
-	    )
+    # s3_client = boto3.client(
+	# 	's3',
+	# 	aws_access_key_id=AWS_ACCESS_KEY_ID,
+	# 	aws_secret_access_key=AWS_SECRET_ACCESS_KEY,
+	#     )
         
-    test = str(user_no) + '-' +str(max_numbering) + '.jpg'
-    s3_client.upload_fileobj(
-        image_file,
-        'bitbits3test',
-        test,
-        ExtraArgs={
-            "ContentType": image_file.content_type,
-        }
-    )
+    # test = str(user_no) + '-' +str(max_numbering) + '.jpg'
+    # s3_client.upload_fileobj(
+    #     image_file,
+    #     'bitbits3test',
+    #     test,
+    #     ExtraArgs={
+    #         "ContentType": image_file.content_type,
+    #     }
+    # )
 
-    return_url = 'https://bitbits3test.s3.ap-northeast-2.amazonaws.com/' + test
+    # return_url = 'https://bitbits3test.s3.ap-northeast-2.amazonaws.com/' + test
 
-    return return_url
+    # return return_url
 
-    print('https://bitbits3test.s3.ap-northeast-2.amazonaws.com/' + test)
+    # print('https://bitbits3test.s3.ap-northeast-2.amazonaws.com/' + test)
     
     
     # s3 = boto3.client('s3') 
@@ -485,8 +486,8 @@ def s3_upload(image_file,user_no,max_numbering):
 
 def conn():
     return connect(
-        user='tester',
-        password='1234',
+        user='root',
+        password='apple',
         host='localhost',
         port=3306,
         db='test',

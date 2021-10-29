@@ -81,8 +81,8 @@ def question_register(user_no,type,title,content):
 
 def conn():
     return connect(
-        user='tester',
-        password='1234',
+        user='root',
+        password='apple',
         host='localhost',
         port=3306,
         db='test',
